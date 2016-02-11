@@ -1,10 +1,17 @@
-from PySide.QtGui import *
-
+"""
+Script for controlling the program
+"""
 from PyCSVModel import PyCSVModel
 
 
-class PyCSVController(QWidget):
-    def __init__(self, parent=None, csvpath=None):
-        super().__init__(parent)
+class PyCSVController:
+    """
+    Class for controlling the program
+    """
+    def __init__(self, csvpath=None):
+        """
+        Constructor for initialising the program
+        :param csvpath: the path of the csv
+        """
         self.pycsvguimodel = PyCSVModel(csvpath=csvpath)
         self.pycsvguimodel.read_file()
